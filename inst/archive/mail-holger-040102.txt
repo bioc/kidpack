@@ -1,0 +1,46 @@
+From h.sueltmann@dkfz-heidelberg.de Sat Jan 10 00:06:41 2004
+Date: Fri, 02 Jan 2004 13:39:37 +0100
+From: PD Dr. Holger Sueltmann <h.sueltmann@dkfz-heidelberg.de>
+To: w.huber@dkfz-heidelberg.de
+Subject: Re: Kidney 3 Daten
+
+    [ The following text is in the "ISO-8859-1" character set. ]
+    [ Your display is set for the "US-ASCII" character set.  ]
+    [ Some characters may be displayed incorrectly. ]
+
+lieber Wolfgang,
+gute Idee, das mit dem Buch. Ich denke auch, daß wir gegen Ende des 
+Jahres das Paper mit den Daten untergebracht haben sollten. Daher kannst 
+Du sie gerne verwenden.
+Viele Grüße und alles Gute fürs neue Jahr!
+
+Holger
+
+
+
+w.huber@dkfz-heidelberg.de schrieb:
+> Hallo Holger,
+> 
+> zusammen mit Robert Gentleman und einigen anderen Leute sind wir dabei,
+> ein Buch ueber Bioconductor vorzubereiten. Dafuer brauchen wir u.a. auch
+> einen guten Beispieldatensatz von cDNA arrays. Ideal waere der
+> Kidney3-Datensatz (74 Slides bzw. Patienten). Das Buch wird sicher nicht
+> vor Ende 2004 / Anfang 2005 herauskommen, bis dahin sind die Daten sowieso
+> publiziert - waere es OK, die Daten als Beispieldaten zu benutzen? Waere
+> fuer die PR sicherlich nicht schlecht, und mir lieber als was von Stanford
+> oder van't Veer oder sonst sowas.
+> 
+> Viele Gruesse + einen guten Rutsch ins Neue Jahr wuenscht
+> 
+>   Wolfgang
+> -------------------------------------
+> Wolfgang Huber
+> Division of Molecular Genome Analysis
+> German Cancer Research Center
+> Heidelberg, Germany
+> Phone: +49 6221 424709
+> Fax:   +49 6221 42524709
+> Http:  www.dkfz.de/abt0840/whuber
+> -------------------------------------
+
+

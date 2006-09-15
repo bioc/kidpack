@@ -1,0 +1,53 @@
+March 25 2004 README addition from VJ Carey:
+This is an R package for access to Wolfgang's contributed
+kidney data.  I have just used save(compress=TRUE) for some
+of the data, and added some trivial documentation.  inst/archive
+includes Wolfgang's audit notes.
+
+==========BELOW IS ORIGINAL README CONTENT=============
+eset74.rda
+==========
+"eset": exprSet with 4224 genes and 74 samples (renal cell cancers).
+Normalized with vsn.
+The most interesting pheno-variables are
+- Subtype
+- rf.survival, progress
+- survival.time, died
+- and the genetic aberrations
+
+cloneanno.rda
+=============
+clone annotations. data.frame with 4224 rows 
+(yeah, I know, it should be an annotation package...)
+> colnames(cloneanno)
+ [1] "plate"        "SrcRow"       "SrcCol"       "imageid"      "AccNumber"
+ [6] "spot1"        "spot2"        "description"  "vendor"       "chromosome"
+[11] "llchromosome" "cytoband"
+
+
+For the raw data and the preprocessing:
+
+qua.rda  
+=======
+Raw data. Matrix with dim(8704, 4, 175), that is 8704 spots, 4 spot 
+statistics, 175 chips       
+dimnames(qua)[[2]]
+1] "fg.green" "bg.green" "fg.red"   "bg.red"
+
+spotanno.rda 
+============
+Spot annotation. data.frame with 8704 rows
+colnames(spotanno)
+[1] "Block"     "Row"       "Column"    "AccNumber" "Name"      "SrcPlt"
+[7] "SrcRow"    "SrcCol"    "vendor"    "ImageID"   "probe"
+
+hybanno.rda
+===========
+Chip annotation. data.frame with 175 rows
+colnames(hybanno)
+[1] "filename"  "patientid" "slideid"
+
+see also
+========
+preproc.txt
+readdata.R runvsn74.R makecloneanno.R makeeset.R test.R

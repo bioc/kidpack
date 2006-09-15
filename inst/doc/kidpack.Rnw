@@ -1,0 +1,123 @@
+%\VignetteIndexEntry{kidpack - overview over the DKFZ kidney data package}
+%\VignetteDepends{kidpack}
+%\VignetteKeywords{Expression Analysis}
+%\VignettePackage{kidpack}
+
+\documentclass[11pt]{article}
+\usepackage{geometry}
+
+\newcommand{\Rfunction}[1]{\texttt{#1}}
+\newcommand{\Robject}[1]{\texttt{#1}}
+\newcommand{\Rpackage}[1]{\textit{#1}}
+\newcommand{\Rclass}[1]{\textit{#1}}
+
+\begin{document}
+\title{Overview over the DKFZ kidney data package}
+\author{Wolfgang Huber}
+\maketitle
+
+<<start1,results=hide>>=
+library(kidpack)
+@
+ 
+The package contains five data objects: two for the processed data, including
+sample information (phenoData) and probe (genes) information, and three for
+the raw data, including spotting information and array processing information.
+
+The data was measured at the German Cancer Research Centre in 2002 by Holger
+S\"ultmann~\cite{kidney3}. He hybridized labeled cDNA from around 85 renal
+cell cancer biopsies that had been obtained at the University of G\"ottingen
+to cDNA arrays that he had produced himself. The cDNA arrays use the two-color
+Stanford-type spotted cDNA technology, with 4224 different clones spotted in
+duplicate. About half of the clones were selected for being expressed in
+kidney according to a previous study on whole genome arrays, and the other
+half are from Bernd Korn's (RZPD) 'onco collection'. Each sample was
+hybridized twice. 175 chips were scanned and digitized. After quality control,
+we selected one representative (good) chip for each sample, resulting in a set
+of 74. These are presented in the \Rclass{exprSet} named \Robject{eset}.
+
+\section{What is it good for?}  
+
+There were three different subtypes of renal cell cancer (RCC): clear cell
+(cc), papillary (p), and chromophobe (ch). These pheno-variables may be used
+for classification or differential expression. The gene expression is quite 
+strongly associated with the subtype.
+
+Other interesting phenovariables are the survival variables \Robject{(progress,
+rf.survival)} and \Robject{(died, survival.time)}. Obviously, the two are highly
+correlated. The binary variable \Robject{m} indicates whether metastases were
+present (and known) at the time of surgery.  The association of the gene
+expression data with these variables is more subtle. Perhaps only wishful
+thinking.
+
+The manuscript has been submitted. As soon as it is accepted, final, and
+public, the preprint will be made availabe in the doc directory of the
+package. Until then, please contact me (WH) directly and I can send you the most
+current version by email.
+
+\section{Processed data}
+<<start2>>=
+data(eset)
+data(cloneanno)
+@
+
+For later use, we define some plot colors for the \Robject{type} variable:
+
+<<>>=
+unique(pData(eset)$type)
+cols <- c("red", "blue", "darkgreen")
+names(cols) <- c("ccRCC", "pRCC", "chRCC")
+@
+
+The chips contained three different clones that all probed for 
+Fibronection 1:
+<<fn1>>=
+sel <- grep("fibronectin 1", cloneanno$description)
+cloneanno[sel, ]
+@
+
+Let's plot the expression values:
+
+<<fn2, fig=TRUE>>=
+eo <- eset[sel, order(pData(eset)$type)]
+x  <- exprs(eo)
+plot(c(1, ncol(x)), range(x), type="n")
+for(i in 1:nrow(x))
+  points(x[i, ], col=cols[pData(eo)$type], pch=16)
+@
+
+\section{Raw data}
+Let's have a look at the raw data
+<<>>=
+data(qua)
+data(hybanno)
+data(spotanno)
+s1 <- cloneanno$spot1[sel]
+s2 <- cloneanno$spot2[sel]
+s1
+qua[s1, "fg.green", 1:3]
+hybanno[1:3,]
+@
+
+The columns \Robject{cloneanno\$spot1}, \Robject{cloneanno\$spot2} are of class
+\Robject{numeric}, with values from 1 to 8704. They refer to the rows of
+\Robject{spotannoanno}.
+
+The column \Robject{spotanno\$probe} is of class \Robject{numeric}, with values
+from 1 to 4224, referring to the rows of \Robject{cloneanno}.
+
+\begin{thebibliography}{10}
+
+\bibitem{kidney3}
+Gene expression in kidney cancer is associated with novel tumor subtypes, 
+cytogenetic abnormalities and metastasis formation.
+\newblock 
+Holger Sueltmann, Anja von Heydebreck, Wolfgang Huber, Ruprecht Kuner, 
+Andreas Buness, Markus Vogt, Bastian Gunawan, Martin Vingron, 
+Laszlo Fuezesi, and Annemarie Poustka
+(Division of Molecular
+Genome Analysis, German Cancer Research Center, Heidelberg).
+\newblock \textit{Submitted 2004}.
+
+\end{thebibliography}
+\end{document}
