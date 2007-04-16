@@ -9,7 +9,7 @@ data(eset)
 data(cloneanno)
 }
 \format{
-\code{eset} is an object of type \code{\link{exprSet}}. 
+\code{eset} is an object of type \code{\link[Biobase]{exprSet}}. 
 Samples (columns of the expression matrix) correspond to renal cell 
 cancer samples from 74 patients with kidney tumors. Probes (rows of the
 expression matrix) correspond to different cDNA clones.
