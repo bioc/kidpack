@@ -1,12 +1,14 @@
 \name{eset}
 \alias{eset}
+\alias{esetSpot}
 \alias{cloneanno}
 \docType{data}
 \title{renal cell cancer expression data}
 \description{renal cell cancer expression data}
 \usage{
-data(eset)
-data(cloneanno)
+data("eset")
+data("esetSpot")
+data("cloneanno")
 }
 \format{
 \code{eset} is an object of type \code{\link[Biobase]{exprSet}}. 
@@ -18,7 +20,11 @@ expression matrix) correspond to different cDNA clones.
 columns are:
 \code{plate}, \code{SrcRow}, \code{SrcCol}, \code{imageid}, \code{AccNumber},
 \code{spot1}, \code{spot2}, \code{description}, \code{vendor}
-}
+
+The arrays that were used to measure these data contained two features
+for each reporter (clone), and \code{esetSpot} is the data \emph{before}
+averaging over the two features per reporter. Spots 4225:8448 are the
+duplicates of spots 1:4224.}
 
 \source{Holger Sueltmann, DKFZ. Also available from 
 ArrayExpress, Accession number E-DKFZ-1.
