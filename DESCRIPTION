@@ -1,9 +1,9 @@
 Package: kidpack
-Version: 1.4.3
-Date: 2007-04-17
+Version: 1.5.0
+Date: 2007-09-09
 Title: DKFZ kidney package
 Author: Wolfgang Huber <huber@ebi.ac.uk>
-Depends: R (>= 2.4.0), Biobase (>= 1.12.0)
+Depends: R (>= 2.6.0), Biobase (>= 1.15.0)
 Maintainer: Wolfgang Huber <huber@ebi.ac.uk> 
 Description: kidney microarray data
 License: GPL2
