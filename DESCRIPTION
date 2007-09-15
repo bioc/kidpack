@@ -1,6 +1,6 @@
 Package: kidpack
-Version: 1.5.0
-Date: 2007-09-09
+Version: 1.5.1
+Date: 16 September 2007
 Title: DKFZ kidney package
 Author: Wolfgang Huber <huber@ebi.ac.uk>
 Depends: R (>= 2.6.0), Biobase (>= 1.15.0)
