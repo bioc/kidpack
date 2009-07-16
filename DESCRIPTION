@@ -1,5 +1,5 @@
 Package: kidpack
-Version: 1.5.2
+Version: 1.5.3
 Date: 16 September 2007
 Title: DKFZ kidney package
 Author: Wolfgang Huber <huber@ebi.ac.uk>
@@ -8,4 +8,4 @@ Maintainer: Wolfgang Huber <huber@ebi.ac.uk>
 Description: kidney microarray data
 License: GPL2
 URL: http://www.dkfz.de/mga
-biocViews: ExperimentData, Cancer
+biocViews: ExperimentData, Cancer, Kidney
