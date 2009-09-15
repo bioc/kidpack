@@ -11,7 +11,8 @@ data("esetSpot")
 data("cloneanno")
 }
 \format{
-\code{eset} is an object of type \code{\link[Biobase]{exprSet}}. 
+\code{eset} is an object of type
+\code{\link[Biobase:class.ExpressionSet]{ExpressionSet}}.  
 Samples (columns of the expression matrix) correspond to renal cell 
 cancer samples from 74 patients with kidney tumors. Probes (rows of the
 expression matrix) correspond to different cDNA clones.
@@ -43,7 +44,7 @@ Andreas Buness, Markus Vogt, Bastian Gunawan, Martin Vingron,
 Laszlo Fuezesi, and Annemarie Poustka. Submitted.
 }
 
-\seealso{\code{\link[kidpack:qua]{qua}}}
+\seealso{\code{\link{qua}}}
 \keyword{datasets}
 \examples{
 
